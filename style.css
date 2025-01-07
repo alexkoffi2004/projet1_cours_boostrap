@@ -1,0 +1,584 @@
+/* Assurer que les éléments de la navbar s'alignent correctement */
+body{
+    padding: 0px 0px;
+    background-color: #E2D9C8;
+    box-sizing: border-box;
+    font-family: 'open sans', sans-serif;
+}
+
+header{
+    height: 100vh;
+    background-image:  url('./image/image_header.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1000px;
+    padding: 0 2rem;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+a:hover{
+    color: orange;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    left: 0;
+    padding: 0rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: black;
+    z-index: 1000;
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn{
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    background-color: orange;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    /* je ne sait pas encore ce que veut dire outline */
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn:active{
+    scale: 0.95;
+}
+
+.dropdown_menu{
+    display: none;
+    position: fixed;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    /* je ne sait pas ce que cela veut dire, mais je ferai des recherche */
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+}
+
+.dropdown_menu li {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown_menu.open{
+    height: 280px;
+}
+
+/* HERO */
+
+section#hero{
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+}
+
+#hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+} 
+
+/* RESPONSIVE DESIGN DE LA NAVBAR*/
+
+@media (max-width: 992px){ 
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+   
+}
+/* header {
+    background-color: #f1f0ee;
+    list-style: none;
+    padding: 0px 10px;
+} */
+
+/* .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0px;
+    margin: 10px 0px;
+    gap: 25px;
+}
+
+
+li a {
+    text-decoration: none ;
+    gap: 10px;
+    transition: background 0.3s ease;
+    padding: 5px 10px;
+}
+
+a:hover {
+    background: #007bff;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) { 
+    .nav_link{
+        display: none;
+        flex-direction: column;
+        background-color: #0056b3;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 150px;
+        border-radius: 10px;
+    }
+
+    .nav_link.active {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+}
+
+.background-image {
+    background-image: url('./image/firstimage.jpg');
+  background-size: cover; 
+  background-position: center; 
+  height: 600px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: white;
+  text-align: center;  margin-bottom: 10px;
+} */
+
+
+
+/* MENU SECTION */
+
+.icon_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 100px; */
+    text-align: center;
+    padding: 10px 100px;
+}
+
+.icon_container p{
+    margin: 0px;
+}
+
+@media (max-width: 576px){
+    .icon_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+    }
+
+    .different_icon{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 492px) {
+    .icon_container{
+        font-size: 10px;
+    }
+    
+    .different_icon{
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 392px) {
+    .icon_container{
+        font-size: 8px;
+    }
+    
+    .different_icon{
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .icon_container{
+        font-size: 5px;
+    }
+    
+    .different_icon{
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.Menu-title {
+    margin-bottom: 10px;
+}
+
+.Dessert_title {
+    margin: 30px  0px 10px 0px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #f1f0ee;
+}
+
+.card {
+    padding: 10px;
+    background-color: #EEEBE6
+}
+
+.card-img-top {
+    border-radius: 5px;
+}
+
+.card-title {
+    margin-top: 5px;
+}
+
+.card_body {
+    text-align: left;
+}
+
+.card_body .card-text {
+    margin-bottom: 15px;
+}
+
+.price_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    background-color: #2D2319;
+    color: white;
+    padding: 5px;
+}
+
+.btn:hover {
+    background-color: #2d2319e3;
+    color: white;
+}
+
+
+
+
+
+
+/*  RESERVATION SECTION */
+
+.container_form{
+    background-color: #f1f0ee;
+    margin: 7rem 0rem;
+    padding-bottom: 50px;
+}
+
+/* ESPONSIVE DESIGN DU FORMULAIRE DE SERVATION */
+
+@media (max-width: 992px){
+    .container_form{
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+
+    textarea{
+        width: 100%;
+    }
+
+    input{
+        width: 150px;
+        margin-bottom: 5px;
+    }
+    .reserver{
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container_form {
+        padding: 10px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .reserver {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .container_form {
+        display: block;
+        padding: 5px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .reserver {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.reservation_title{
+    text-transform: uppercase;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.reservation_image{
+    background-size: cover;
+    width: 350px;
+    left: 0px;
+}
+
+.reservation_contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    background-color: #EEEBE6;
+    margin: 20px 256px;
+    gap: 20px;
+
+}
+
+input{
+    padding: 10px;
+    width: 200px;
+    border: none;
+}
+
+.formulaire{
+    padding: 10px;
+    display: flex;
+}
+
+.row1{
+    margin-bottom: 20px;
+}
+
+.row2{
+    margin-bottom: 25px;
+} 
+
+textarea{
+    border: none;
+    box-sizing: border-box;
+}
+
+/* .submit{
+    background-color: orange;
+    color: white;
+    padding: 8px 40px;
+    border: none;
+    /* je ne sait pas encore ce que veut dire outline */
+    /*outline: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+    margin-top: 50px;
+}
+
+.submit:hover{
+    color: white;
+    scale: 1.05;
+} */
+
+.reserver{
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 10px 70px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 30%;
+    margin-right: auto;
+}
+
+.reserver:hover{
+    scale: 1.02;
+}
+
+.reserver:active{
+    scale: 0.95;
+}
+
+/* SECTION CONTACT */
+
+label{
+    margin: 5px 0px;
+    width: 100%;
+}
+
+.contact{
+    display: block;
+    align-items: center;
+    background-color: #EEEBE6;
+    padding: 0px 240px;
+}
+
+.contact_content{
+    padding: 0px 200px;
+}
+
+.secondary_btn{
+    background-color: orange;
+    padding: 10px 70px;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.07rem;
+}
+
+.secondary_btn:hover{
+    scale: 1.02;
+}
+
+.secondary_btn:active{
+    scale: 0.95;
+}
+
+
+/* SECTION A PROPOS DE NOUS */
+
+.a_propos_de_nous{
+    background-color: #f1f0ee;
+}
+
+.about_title{
+    text-transform: uppercase;
+    padding: 20px 0px;
+    text-align: center;
+}
+.clearfix{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 240px;
+}
+
+.About_Description{
+    line-height: 3;
+    text-align: justify;
+    margin-right: 10px;
+}
+
+.About_img{
+    width: 350px;
+    height: 500px;
+    /* border-radius: 50%; */
+    margin-right: 20px;
+}
+
+.About_content{
+    background-color: #EEEBE6;
+    margin: 0px 0px 50px 0px;
+}
